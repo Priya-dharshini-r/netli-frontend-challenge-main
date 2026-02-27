@@ -1,0 +1,129 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Leanne Graham",
+      "username": "Bret",
+      "email": "Sincere@april.biz",
+      "title": "Marketing Manager"
+    },
+    {
+      "id": "2",
+      "name": "Ervin Howell",
+      "username": "Antonette",
+      "email": "Shanna@melissa.tv",
+      "title": "Product Manager"
+    },
+    {
+      "id": "3",
+      "name": "Clementine Bauch",
+      "username": "Samantha",
+      "email": "Nathan@yesenia.net",
+      "title": "Lead Developer"
+    }
+  ],
+  "todos": [
+    {
+      "userId": 1,
+      "id": "1",
+      "title": "schedule posts for social",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": "2",
+      "title": "run through the feature and make sure it works",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": "3",
+      "title": "write all the tests",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": "4",
+      "title": "publish blog post announcement",
+      "completed": true
+    },
+    {
+      "userId": 2,
+      "id": "5",
+      "title": "coordinate release party",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": "6",
+      "title": "launch press release",
+      "completed": false
+    },
+    {
+      "userId": 1,
+      "id": "7",
+      "title": "record a quick tiktok announcing the feature",
+      "completed": false
+    },
+    {
+      "userId": 3,
+      "id": "8",
+      "title": "finish internal documentation",
+      "completed": true
+    },
+    {
+      "userId": 1,
+      "id": "9",
+      "title": "release day launch party",
+      "completed": false
+    },
+    {
+      "userId": 2,
+      "id": "10",
+      "title": "announce the release internally",
+      "completed": true
+    },
+    {
+      "userId": 3,
+      "id": "11",
+      "title": "merge release branch",
+      "completed": true
+    },
+    {
+      "userId": 3,
+      "id": "12",
+      "title": "check Netlify Deploy Preview",
+      "completed": true
+    },
+    {
+      "id": 13,
+      "userId": 1,
+      "title": "Complete the assessment",
+      "completed": false
+    },
+    {
+      "id": 14,
+      "userId": 1,
+      "title": "Complete the application",
+      "completed": false
+    },
+    {
+      "id": 15,
+      "userId": 1,
+      "title": "New app",
+      "completed": false
+    },
+    {
+      "id": 16,
+      "userId": 1,
+      "title": "Last task",
+      "completed": false
+    },
+    {
+      "id": 17,
+      "userId": 1,
+      "title": "First 6",
+      "completed": false
+    }
+  ]
+}
