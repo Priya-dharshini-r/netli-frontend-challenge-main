@@ -1,21 +1,207 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
+body {
+  font-family: 'Figtree', sans-serif;
+  background: #fff;
+  color: #000;
+  min-height: 100vh;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── App shell ── */
 .App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 32px 80px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* ── Header: logo + big title ── */
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.app-header img {
+  width: 88px;
+  height: auto;
+}
+
+.app-header h1 {
+  font-size: clamp(4.5rem, 18vw, 7rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #000;
   text-align: center;
 }
 
-.todos {
-  display: grid;
-  justify-content: center;
+/* ── Main content ── */
+.app-main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
 
-img {
-  max-height: 60px;
+/* ── Team select ── */
+.team-select-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.team-label {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.team-select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Figtree', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+  padding-right: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5.5 6L10 1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 2px center;
+}
+
+.team-select-wrapper select:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ── Todos section ── */
+.todos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* We don't show a separate heading — the Team dropdown acts as the context */
+.todos-heading {
+  display: none;
+}
+
+.todos > p[aria-live] {
+  color: #aaa;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.todo-empty {
+  color: #bbb;
+  font-size: 1rem;
+  padding: 8px 0;
+  list-style: none;
+}
+
+.error-message {
+  color: #c0392b;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+/* ── Add todo form ── */
+.todo-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-form input[type="text"] {
+  width: 100%;
+  padding: 18px 20px;
+  border: 2px solid #000;
+  border-radius: 14px;
+  font-family: 'Figtree', sans-serif;
+  font-size: 1.05rem;
+  color: #000;
+  background: #fff;
+  outline: none;
+}
+
+.todo-form input[type="text"]::placeholder {
+  color: #c0c0c0;
+}
+
+.todo-form input[type="text"]:focus {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+.todo-form button {
+  width: 100%;
+  padding: 18px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-family: 'Figtree', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: opacity 0.15s, transform 0.1s;
+}
+
+.todo-form button:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.todo-form button:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.todo-form button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.todo-form button:focus-visible {
+  outline: 3px solid #555;
+  outline-offset: 3px;
 }
