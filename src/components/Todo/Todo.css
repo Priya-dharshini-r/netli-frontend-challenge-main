@@ -1,4 +1,63 @@
+/* ── Todo item ── */
 .todo {
-  text-align: left;
-  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 0;
+  list-style: none;
+  cursor: pointer;
+}
+
+.todo input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border: 2px solid #ccc;
+  border-radius: 7px;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+
+/* Checked — solid black box */
+.todo input[type="checkbox"]:checked {
+  background: #000;
+  border-color: #000;
+}
+
+/* White checkmark */
+.todo input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  width: 13px;
+  height: 7px;
+  border-left: 2.5px solid #fff;
+  border-bottom: 2.5px solid #fff;
+  transform: rotate(-45deg);
+}
+
+.todo input[type="checkbox"]:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 3px;
+}
+
+/* Label text */
+.todo label {
+  font-family: 'Figtree', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+/* Completed — no strikethrough in the mock, just normal text */
+.todo--completed label {
+  color: #000;
 }

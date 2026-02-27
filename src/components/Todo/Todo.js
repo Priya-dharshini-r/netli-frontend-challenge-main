@@ -1,21 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Todo.css";
 
-export default class Todo extends Component {
-  render() {
-    return (
-      <div className="todo">
-        <input
-          type="checkbox"
-          id={`${this.props.todo.userId}--${this.props.todo.id}`}
-          name={this.props.todo.title}
-          checked={this.props.todo.completed}
-          onChange={() => this.props.isCompleted(this.props.todo.id)}
-        />
-        <label htmlFor={`${this.props.todo.userId}--${this.props.todo.id}`}>
-          {this.props.todo.title}
-        </label>
-      </div>
-    );
-  }
-}
+const Todo = ({ todo, isCompleted }) => {
+  const inputId = `todo--${todo.userId}--${todo.id}`;
+
+  return (
+    <li className={`todo${todo.completed ? " todo--completed" : ""}`}>
+      <input
+        type="checkbox"
+        id={inputId}
+        name={todo.title}
+        checked={todo.completed}
+        onChange={() => isCompleted(todo.id)}
+        aria-label={`Mark "${todo.title}" as ${todo.completed ? "incomplete" : "complete"}`}
+      />
+      <label htmlFor={inputId}>{todo.title}</label>
+    </li>
+  );
+};
+
+export default Todo;
